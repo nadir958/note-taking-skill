@@ -9,6 +9,8 @@ Convert a raw note into a clean markdown entry inside the dedicated notes reposi
 
 Prefer concise notes that preserve meaning, decisions, and follow-up work.
 
+Rule: always persist durable project memory to `NOTE_TAKING_REPO` during normal project discussions. Skip only transient, casual, explicitly private, or explicitly excluded content.
+
 Default to implicit note capture. If the discussion contains durable information worth remembering, treat that as note-taking work even when the user does not explicitly ask for notes.
 
 Skip note capture only when the exchange is clearly transient, casual, or purely procedural with no future memory value, or when the user explicitly says not to save notes.
