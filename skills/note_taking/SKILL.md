@@ -1,6 +1,6 @@
 ---
 name: note-taking
-description: Capture raw user notes from any project and persist them into a dedicated Git-based knowledge repository as structured markdown with optional memory updates and a git commit. Use when Codex is given unstructured notes, meeting notes, research snippets, ideas, decisions, or action items that should be organized centrally across projects instead of being stored inside the currently opened repository.
+description: Capture important information from any project discussion and persist it into a dedicated Git-based knowledge repository as structured markdown with optional memory updates and a git commit. Use not only when Codex is explicitly asked to take notes, but also during normal work whenever the conversation contains durable project information such as requirements, plans, debugging conclusions, implementation decisions, action items, research findings, preferences, or lessons that should be remembered centrally across projects instead of staying only in the current thread.
 ---
 
 # Note Taking
@@ -8,6 +8,10 @@ description: Capture raw user notes from any project and persist them into a ded
 Convert a raw note into a clean markdown entry inside the dedicated notes repository, update durable memory files only when warranted, and record the change in git.
 
 Prefer concise notes that preserve meaning, decisions, and follow-up work.
+
+Default to implicit note capture. If the discussion contains durable information worth remembering, treat that as note-taking work even when the user does not explicitly ask for notes.
+
+Skip note capture only when the exchange is clearly transient, casual, or purely procedural with no future memory value, or when the user explicitly says not to save notes.
 
 ## Workflow
 
@@ -31,6 +35,10 @@ Prefer concise notes that preserve meaning, decisions, and follow-up work.
 11. Commit with `AI: add/update note <topic>`.
 12. Push the dedicated notes repository when possible.
 
+Coordinate with:
+- `$memory-manager` for deciding whether `RULES.json` or `DIARY.json` should change
+- `$git-sync` for the pull, stage, commit, and push steps
+
 ## Analyze The Note
 
 Infer a short topic slug from the dominant subject. Use lowercase hyphenated words and keep it specific enough to be useful in filenames.
@@ -43,6 +51,14 @@ Extract these buckets from the raw text:
 - `Context`: supporting details that help the note make sense later
 
 If the note contains no explicit action or decision, omit those sections instead of inventing content.
+
+Prefer capturing information from these common discussion types:
+- bug investigations that reached a conclusion
+- implementation plans and architecture choices
+- user preferences that affect future work
+- project-specific conventions or workflows
+- research summaries and tradeoff decisions
+- TODOs or follow-up items with clear next actions
 
 ## Write The Note
 
