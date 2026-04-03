@@ -1,0 +1,4 @@
+interface:
+  display_name: "Note Taking"
+  short_description: "Capture and persist structured notes"
+  default_prompt: "Use $note-taking to turn this raw note into a structured knowledge entry."
