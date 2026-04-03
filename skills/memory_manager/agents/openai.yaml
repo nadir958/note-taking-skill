@@ -1,0 +1,4 @@
+interface:
+  display_name: "Memory Manager"
+  short_description: "Maintain durable note system memory"
+  default_prompt: "Use $memory-manager to decide whether this note should update RULES.json or DIARY.json."

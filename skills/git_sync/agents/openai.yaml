@@ -1,0 +1,4 @@
+interface:
+  display_name: "Git Sync"
+  short_description: "Sync the dedicated notes repository"
+  default_prompt: "Use $git-sync to pull, commit, and push note repository changes safely."
