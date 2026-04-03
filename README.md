@@ -119,9 +119,15 @@ Restart Codex after `setx` if you want the app to pick up the new persistent val
 
 You can use the suite in two ways.
 
+Recommended conversation-level instructions:
+
+- `Always use $note-taking for durable project memory in this conversation.`
+- `Persist durable project memory automatically unless I say not to.`
+
 Explicit usage:
 
 - `Use $note-taking for this discussion.`
+- `Use $note-taking to capture this decision: we will use Redis for caching.`
 - `Use $memory-manager to decide whether this should update durable memory.`
 - `Use $git-sync to commit and push the notes repository.`
 
